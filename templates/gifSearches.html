@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Gif Search!
+{% endblock %}
+
+{% block content %}
+<p>
+{% if show_compliments %}
+   Hi {{name}} You are so:
+    <ul>
+        {% for compliment in compliments %}
+            <li>{{ compliment }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    Have a nice day!
+{% endif %}
+</p>
+{% endblock %}
