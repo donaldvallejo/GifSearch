@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<form action='/gifSearches'>
+<form action='/'>
     <p>
         Hello World!!
     </p>
@@ -14,5 +14,19 @@
         <input type="text" name="name"/>
     </p>
    
+    <button type="submit">Submit</button>
 </form>
+
+{% include 'gif.html' %}
+
 {% endblock %}
+
+
+<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+
+<!-- TODO: Make an HTML form containing a search box and a submit button to add
+    the search term to the query string -->
+
+<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
+
+<!-- TODO: For each gif, include the 'gif.html' template to display it -->

@@ -4,6 +4,27 @@
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
+
         {% block content %}{% endblock %}
+        
+        <form>
+        <p>
+        <input type="checkbox" name="show_gifs"/>
+        Show Compliments
+    </p>
+    <button type="submit">Submit</button>
+    </form>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </body>
 </html>
+
+
+<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+
+<!-- TODO: Make an HTML form containing a search box and a submit button to add
+    the search term to the query string -->
+
+<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
+
+<!-- TODO: For each gif, include the 'gif.html' template to display it -->
