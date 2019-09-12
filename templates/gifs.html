@@ -1,0 +1,9 @@
+{% if gifSearch %}
+    <ul>
+        {% for gif in gifs %}
+            <li>{{ gif }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    Loop isn't working!
+{% endif %}

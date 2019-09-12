@@ -23,7 +23,6 @@ def gifSearch():
         "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search_term, apikey, lmt))
     gif = r.json()['results']
     return gif[0]
-    
 
 gifSearch()
 if __name__ == "__main__":
