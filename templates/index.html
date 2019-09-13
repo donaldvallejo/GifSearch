@@ -4,6 +4,7 @@
     Gif Search
 {% endblock %}
 
+<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
 {% block content %}
 <form action='/'>
     <p>
@@ -11,19 +12,15 @@
     </p>
     <p>
         Which gif do you want to search?
-        <input type="text" name="name"/>
+        <input type="text" name="search"/>
+        <button type="submit">Submit</button>
     </p>
-   
-    <button type="submit">Submit</button>
 </form>
 
 {% include 'gif.html' %}
 {% include 'gifs.html' %}
 
 {% endblock %}
-
-
-<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
 
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
     the search term to the query string -->
