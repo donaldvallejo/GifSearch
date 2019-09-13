@@ -27,7 +27,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-
+#Ben was here
 """Return homepage."""
     # TODO: Extract the query term from url using request.args.get()
 
