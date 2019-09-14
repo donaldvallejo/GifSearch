@@ -9,7 +9,7 @@ from random import sample
 app = Flask(__name__)
 pp = pprint.PrettyPrinter(indent=4)
 params = {
-    "q" : "Im not sure how this built in works??",
+    "q" : "Im not sure how this built-in works??",
     "apikey" : "6KSAHML0KPXD",
     "lmt" : 10
 }
@@ -19,6 +19,7 @@ params = {
 def index():
     """Show the homepage and ask the user's name."""
     return render_template('index.html', gif = gifSearch())
+    
 
 """ Main function for the Gif search """
 def gifSearch():
@@ -26,7 +27,7 @@ def gifSearch():
     r = requests.get(
         "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search, params['apikey'], params['lmt']))
     gif = r.json()['results']
-    return gif[1]
+    return gif[9]
     
 
 if __name__ == "__main__":
