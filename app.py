@@ -18,29 +18,26 @@ params = {
 @app.route('/')
 def index():
     """Show the homepage and ask the user's name."""
-    return render_template('index.html', gif = gifSearch())
+    return render_template('index.html', gifs = gifSearch())
 
 """ Main function for the Gif search """
 def gifSearch():
     search = request.args.get('search')
     r = requests.get(
-        "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search, params['apikey'], params['lmt']))
-    pp.pprint(['results'])
-    gif = r.json()['results']
-    return gif[2]
+        "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search, params['apikey'], params['lmt']))    
     
     """ Loop for printed Gifs """
-    # gifList = []
-    # gif = r.json()
-    # print(type(gif))
-    # resultsList = gif['results']
-    # for gifs in resultsList:
-    #     medialist = gifs['media']
-    #     for medias in medialist:
-    #         gifList.append(medias['gif']['url'])
-    #         pp.pprint(medias['gif']['url'])
+    gifList = []
+    gif = r.json()
+    resultsList = gif['results']
 
-    # return gifList
+    for gifs in resultsList:
+        medialist = gifs['media']
+        for medias in medialist:
+            gifList.append(medias['gif']['url'])
+            pp.pprint(medias['gif']['url'])
+
+    return gifList
     
     # """ Route Test's """
     # class AppTests(unittest.TestCase): 
@@ -58,9 +55,3 @@ def gifSearch():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-    # TODO: Using dictionary notation, get the 'results' field of the JSON,
-    # which contains the GIFs as a list
-
-    # TODO: Render the 'index.html' template, passing the list of gifs as a
-    # named parameter called 'gifs'

@@ -1,8 +1,8 @@
 <!--  jinja template loop for gifs -->
 {% if '/' %}
-    <ul>
-        {% for gifs in gif %}
-            <li>{{ gif }}</li>
+    <ul style="list-style: none;">
+        {% for gif in gifs %}
+            <li><img src="{{gif}}" alt="What ever you searched"></li>
         {% endfor %}
     </ul>
 {% else %}
