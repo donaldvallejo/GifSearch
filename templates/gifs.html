@@ -1,10 +1,16 @@
 <!--  jinja template loop for gifs -->
 {% if '/' %}
+<div class="container">
     <ul style="list-style: none;">
+            <div class="row row-grid">
         {% for gif in gifs %}
-            <li><img src="{{gif}}" alt="What ever you searched"></li>
+        <div class="">
+            <li><img class="col p -md-offset-12" src="{{gif}}" alt="What ever you searched"></li>
+        </div>
         {% endfor %}
     </ul>
+</div>
+</div>
 {% else %}
     Loop isn't working!
 {% endif %}
