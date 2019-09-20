@@ -25,6 +25,7 @@ def gifSearch():
     search = request.args.get('search')
     r = requests.get(
         "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search, params['apikey'], params['lmt']))    
+
     
     """ Loop for printed Gifs """
     gifList = []
@@ -37,7 +38,12 @@ def gifSearch():
             gifList.append(medias['gif']['url'])
             pp.pprint(medias['gif']['url'])
 
+    pp.pprint(['results'])
+
     return gifList
+
+    
+
     
     # """ Route Test's """
     # class AppTests(unittest.TestCase): 
